@@ -146,7 +146,7 @@ void setup() {
 void initColors(){
   SNARE_COLOR = color(0, 95, 87);
   SNARE_SHOT_COLOR = color(97, 83, 100);
-  SNARE_RIM_COLOR = color(99, 87, 39);
+  SNARE_RIM_COLOR = color(99, 87, 37);
   TOM1_COLOR = color(54, 100, 66);
   TOM1_RIM_COLOR = color(26, 64, 70);
   TOM2_COLOR = color(55, 100, 45);
@@ -158,8 +158,8 @@ void initColors(){
   RIDE_TOP_COLOR = color(11, 98, 92);
   RIDE_EDGE_COLOR = color(13, 100, 96);
   HH_TOP_OPEN_COLOR = color(17, 100, 100);
-  HH_TOP_CLOSED_COLOR = color(17, 100, 100);
-  HH_EDGE_OPEN_COLOR = color(13, 100, 100);
+  HH_TOP_CLOSED_COLOR = color(13, 100, 100);
+  HH_EDGE_OPEN_COLOR = color(17, 100, 100);
   HH_EDGE_CLOSED_COLOR = color(13, 100, 100);
   HH_PEDAL_COLOR = color(17, 100, 100);
   KICK_COLOR = color(68, 66, 45);
@@ -211,7 +211,7 @@ void initPositions(){
   HH_Y = (TOM2_Y - TOM_RADIUS_MAX) / 2;
   CRASH_STACK_X = 0;
   CRASH_STACK_Y = height * 0.55;
-  RIDE_STACK_X = width;
+  RIDE_STACK_X = width - 1;
   RIDE_STACK_Y = CRASH_STACK_Y;
 }
 
@@ -304,11 +304,11 @@ void noteOn(int channel, int pitch, int velocity) {
   if(currConnectionRadius < 20){
     incAmount = 12;
   }else if(currConnectionRadius < 30){
-    incAmount = 10;
+    incAmount = 8;
   }else if(currConnectionRadius < 45){
-    incAmount = 7;
+    incAmount = 5;
   }else{
-    incAmount = 3;
+    incAmount = 2;
   }
   
   //Increase min mesh connection radius if not at max
